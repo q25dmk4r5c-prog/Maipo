@@ -29,22 +29,17 @@
         .section-title { font-size: 1.7rem; margin-bottom: 0.75rem; color: #6C1848; }
         .section-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #A23B72; margin-bottom: 0.25rem; }
         .section-intro { max-width: 640px; margin-bottom: 1.75rem; font-size: 1rem; }
-        .hero { padding: 4.5rem 1.25rem 3.5rem; background: linear-gradient(135deg, #FBE7F3 0%, #FFFFFF 38%, #F9F0F7 100%); position: relative; overflow: hidden; }
-        .hero:before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(162,59,114,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .hero { padding: 4.5rem 1.25rem 3.5rem; background: linear-gradient(135deg, #971B5C 0%, #6B1441 100%); color: white; position: relative; overflow: hidden; }        .hero:before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(162,59,114,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
         .hero-grid { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
         .hero-pill { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: #A23B72; background: #F5E3F0; padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 0.75rem; }
         .hero-title { font-size: 2.2rem; line-height: 1.15; margin-bottom: 1rem; color: #6C1848; }
         .hero-text { font-size: 1.02rem; margin-bottom: 1rem; }
         .hero-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
-        .hero-contact { font-size: 0.88rem; margin-top: 1rem; opacity: 0.9; }
-        .hero-contact a { color: #E8A537; font-weight: 600; }
+        .hero-pill { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: white; background: rgba(255,255,255,0.2); padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 0.75rem; }        .hero-contact a { color: #E8A537; font-weight: 600; }
         .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .pilar-card { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 10px 24px rgba(0,0,0,0.03); transition: all 0.2s; position: relative; overflow: hidden; }
-        .pilar-card:before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #A23B72, #F5E3F0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+        .hero-text { font-size: 1.02rem; margin-bottom: 1rem; color: rgba(255,255,255,0.95); }        .pilar-card:before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #A23B72, #F5E3F0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
         .pilar-card:hover:before { transform: scaleX(1); }
-        .pilar-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(162,59,114,0.12); }
-        .pilar-number { background: #A23B72; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 0.75rem; }
-        .pilar-tag { font-size: 0.8rem; text-transform: uppercase; color: #A23B72; margin-bottom: 0.6rem; }
+        .hero-contact a { color: #E8A537; font-weight: 600; }        .pilar-tag { font-size: 0.8rem; text-transform: uppercase; color: #A23B72; margin-bottom: 0.6rem; }
         .pilar-title { font-size: 1.2rem; color: #6C1848; margin-bottom: 0.5rem; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
         .service-card { background: white; border-radius: 14px; padding: 1.3rem 1.4rem; border-left: 4px solid #A23B72; box-shadow: 0 8px 22px rgba(0,0,0,0.04); transition: all 0.2s; }
@@ -75,8 +70,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="nav">
+        .hero-title { font-size: 2.2rem; line-height: 1.15; margin-bottom: 1rem; color: white; }        <div class="nav">
             <div class="nav-left"><div class="nav-logo-text">maipo</div></div>
             <nav class="nav-menu">
                 <a href="#quienes-somos">Quiénes somos</a>
