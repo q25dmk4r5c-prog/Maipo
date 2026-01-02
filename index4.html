@@ -8,461 +8,346 @@
     <meta property="og:title" content="Maipo - Iniciativa social para una sociedad más cohesionada, inclusiva y equitativa">
     <meta property="og:description" content="Acompañamos procesos, cultivamos saberes y generamos proyectos junto a equipos, organizaciones y servicios públicos de acción social.">
     <meta property="og:type" content="website">
-    
     <style>
-        /* Variables CSS */
-        :root {
-            --maipo-magenta: #A23B72;
-            --maipo-magenta-light: #F5E3F0;
-            --maipo-magenta-dark: #6C1848;
-            --maipo-accent: #E8A537;
-            --maipo-gray: #555555;
-            --maipo-gray-light: #F7F7F7;
-            --maipo-white: #FFFFFF;
-            --max-width: 1080px;
-        }
-
-        /* Reset y fuentes */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--maipo-gray);
-            background-color: var(--maipo-white);
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            color: var(--maipo-magenta-dark);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(255,255,255,0.96);
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-            backdrop-filter: blur(6px);
-        }
-
-        .nav {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .nav-logo {
-            width: 40px;
-            height: auto;
-        }
-
-        .nav-logo-text {
-            font-weight: 700;
-            color: var(--maipo-magenta-dark);
-            letter-spacing: 0.03em;
-            font-size: 1.05rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1.25rem;
-            font-size: 0.95rem;
-            list-style: none;
-        }
-
-        .nav-menu a {
-            position: relative;
-            padding-bottom: 0.15rem;
-        }
-
-        .nav-menu a:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--maipo-magenta);
-            transition: width 0.2s;
-        }
-
-        .nav-menu a:hover:after {
-            width: 100%;
-        }
-
-        /* Botones */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 999px;
-            border: none;
-            padding: 0.65rem 1.5rem;
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.18s;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background-color: var(--maipo-magenta);
-            color: var(--maipo-white);
-            box-shadow: 0 4px 12px rgba(162,59,114,0.25);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--maipo-magenta-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(162,59,114,0.3);
-            text-decoration: none;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--maipo-magenta-dark);
-            border: 1px solid var(--maipo-magenta);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--maipo-magenta-light);
-            text-decoration: none;
-        }
-
-        .btn-accent {
-            background-color: var(--maipo-accent);
-            color: var(--maipo-gray);
-        }
-
-        .btn-accent:hover {
-            background-color: #D68C2A;
-            text-decoration: none;
-        }
-
-        /* Main */
-        main {
-            overflow-x: hidden;
-        }
-
-        /* Secciones */
-        .section {
-            padding: 3.5rem 1.25rem;
-        }
-
-        .section-alt {
-            background: linear-gradient(135deg, var(--maipo-gray-light) 0%, #FAFBFC 100%);
-        }
-
-        .section-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 1.7rem;
-            margin-bottom: 0.75rem;
-            color: var(--maipo-magenta-dark);
-        }
-
-        .section-subtitle {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--maipo-magenta);
-            margin-bottom: 0.25rem;
-        }
-
-        .section-intro {
-            max-width: 640px;
-            margin-bottom: 1.75rem;
-            font-size: 1rem;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 4.5rem 1.25rem 3.5rem;
-            background: linear-gradient(135deg, #FBE7F3 0%, #FFFFFF 38%, #F9F0F7 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(162,59,114,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .hero-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-            gap: 2.5rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-pill {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--maipo-magenta);
-            background-color: var(--maipo-magenta-light);
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
-            display: inline-block;
-            margin-bottom: 0.75rem;
-        }
-
-        .hero-title {
-            font-size: 2.2rem;
-            line-height: 1.15;
-            margin-bottom: 1rem;
-            color: var(--maipo-magenta-dark);
-        }
-
-        .hero-text {
-            font-size: 1.02rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-            margin-bottom: 0.9rem;
-        }
-
-        .hero-note {
-            font-size: 0.9rem;
-            color: var(--maipo-gray);
-        }
-
-        .hero-contact {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .hero-contact a {
-            color: var(--maipo-accent);
-            font-weight: 600;
-        }
-
-        /* Pilares */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0,1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .pilar-card {
-            background-color: var(--maipo-white);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(0,0,0,0.03);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.03);
-            transition: all 0.15s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pilar-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--maipo-magenta), var(--maipo-magenta-light));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s;
-        }
-
-        .pilar-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .pilar-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 32px rgba(162,59,114,0.12);
-            border-color: rgba(162,59,114,0.2);
-        }
-
-        .pilar-number {
-            display: inline-block;
-            background-color: var(--maipo-magenta);
-            color: var(--maipo-white);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 0.75rem;
-        }
-
-        .pilar-tag {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--maipo-magenta);
-            margin-bottom: 0.6rem;
-        }
-
-        .pilar-title {
-            font-size: 1.2rem;
-            color: var(--maipo-magenta-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .pilar-text {
-            font-size: 0.95rem;
-        }
-
-        /* Servicios */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 1.25rem;
-            margin-top: 1.25rem;
-        }
-
-        .service-card {
-            background-color: var(--maipo-white);
-            border-radius: 14px;
-            padding: 1.3rem 1.4rem;
-            border-left: 4px solid var(--maipo-magenta);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.04);
-            transition: all 0.2s;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 12px 32px rgba(162,59,114,0.12);
-            transform: translateX(4px);
-        }
-
-        .service-title {
-            font-size: 1.02rem;
-            font-weight: 700;
-            color: var(--maipo-magenta-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .service-text {
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-card li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
-            color: var(--maipo-gray);
-        }
-
-        .service-card li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #27AE60;
-            font-weight: bold;
-        }
-
-        /* Públicos */
-        .audiences-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 1.25rem;
-            margin-top: 1.25rem;
-        }
-
-        .audience-card {
-            border-radius: 12px;
-            padding: 1.2rem 1.3rem;
-            background: linear-gradient(135deg, var(--maipo-magenta-light) 0%, rgba(245, 227, 240, 0.5) 100%);
-            color: var(--maipo-magenta-dark);
-            border: 1px solid rgba(162,59,114,0.1);
-            transition: all 0.2s;
-        }
-
-        .audience-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(162,59,114,0.15);
-        }
-
-        .audience-title {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .audience-text {
-            font-size: 0.95rem;
-        }
-
-        /* CTA intermedio */
-        .section-cta {
-            background: radial-gradient(circle at top left, rgba(162,59,114,0.06) 0%, #FFFFFF 45%, #FBE7F3 100%);
-            border-top: 1px solid rgba(162,59,114,0.08);
-            border-bottom: 1px solid rgba(162,59,114,0.08);
-        }
-
-        .cta-inner {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .cta-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            align-items: flex-start;
-        }
-
-        .cta-note
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #555; line-height: 1.6; }
+        a { color: #6C1848; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.96); box-shadow: 0 1px 4px rgba(0,0,0,0.04); backdrop-filter: blur(6px); }
+        .nav { max-width: 1080px; margin: 0 auto; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+        .nav-logo-text { font-weight: 700; color: #6C1848; font-size: 1.05rem; }
+        .nav-menu { display: flex; gap: 1.25rem; list-style: none; font-size: 0.95rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 1.5rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+        .btn-primary { background: #A23B72; color: white; box-shadow: 0 4px 12px rgba(162,59,114,0.25); }
+        .btn-primary:hover { background: #6C1848; text-decoration: none; }
+        .btn-outline { background: transparent; color: #6C1848; border: 1px solid #A23B72; }
+        .btn-outline:hover { background: #F5E3F0; text-decoration: none; }
+        .section { padding: 3.5rem 1.25rem; }
+        .section-alt { background: linear-gradient(135deg, #F7F7F7 0%, #FAFBFC 100%); }
+        .section-inner { max-width: 1080px; margin: 0 auto; }
+        .section-title { font-size: 1.7rem; margin-bottom: 0.75rem; color: #6C1848; }
+        .section-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #A23B72; margin-bottom: 0.25rem; }
+        .section-intro { max-width: 640px; margin-bottom: 1.75rem; font-size: 1rem; }
+        .hero { padding: 4.5rem 1.25rem 3.5rem; background: linear-gradient(135deg, #FBE7F3 0%, #FFFFFF 38%, #F9F0F7 100%); position: relative; overflow: hidden; }
+        .hero:before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(162,59,114,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .hero-grid { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-pill { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: #A23B72; background: #F5E3F0; padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 0.75rem; }
+        .hero-title { font-size: 2.2rem; line-height: 1.15; margin-bottom: 1rem; color: #6C1848; }
+        .hero-text { font-size: 1.02rem; margin-bottom: 1rem; }
+        .hero-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .hero-contact { font-size: 0.88rem; margin-top: 1rem; opacity: 0.9; }
+        .hero-contact a { color: #E8A537; font-weight: 600; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .pilar-card { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 10px 24px rgba(0,0,0,0.03); transition: all 0.2s; position: relative; overflow: hidden; }
+        .pilar-card:before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #A23B72, #F5E3F0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+        .pilar-card:hover:before { transform: scaleX(1); }
+        .pilar-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(162,59,114,0.12); }
+        .pilar-number { background: #A23B72; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 0.75rem; }
+        .pilar-tag { font-size: 0.8rem; text-transform: uppercase; color: #A23B72; margin-bottom: 0.6rem; }
+        .pilar-title { font-size: 1.2rem; color: #6C1848; margin-bottom: 0.5rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+        .service-card { background: white; border-radius: 14px; padding: 1.3rem 1.4rem; border-left: 4px solid #A23B72; box-shadow: 0 8px 22px rgba(0,0,0,0.04); transition: all 0.2s; }
+        .service-card:hover { box-shadow: 0 12px 32px rgba(162,59,114,0.12); transform: translateX(4px); }
+        .service-title { font-size: 1.02rem; font-weight: 700; color: #6C1848; margin-bottom: 0.5rem; }
+        .service-text { font-size: 0.95rem; margin-bottom: 0.75rem; }
+        .service-card ul { list-style: none; padding: 0; }
+        .service-card li { padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem; font-size: 0.9rem; }
+        .service-card li:before { content: '✓'; position: absolute; left: 0; color: #27AE60; font-weight: bold; }
+        .audiences-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+        .audience-card { border-radius: 12px; padding: 1.2rem 1.3rem; background: linear-gradient(135deg, #F5E3F0 0%, rgba(245, 227, 240, 0.5) 100%); transition: all 0.2s; }
+        .audience-card:hover { transform: scale(1.02); box-shadow: 0 8px 16px rgba(162,59,114,0.15); }
+        .audience-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #6C1848; }
+        .section-cta { background: radial-gradient(circle at top left, rgba(162,59,114,0.06) 0%, #FFFFFF 45%, #FBE7F3 100%); border-top: 1px solid rgba(162,59,114,0.08); }
+        .cta-note { font-size: 0.9rem; color: #555; margin-top: 0.5rem; }
+        .faq-item { background: white; border-radius: 12px; padding: 1.1rem 1.2rem; border: 1px solid rgba(0,0,0,0.04); margin-bottom: 1rem; }
+        .faq-question { font-size: 1rem; font-weight: 700; color: #6C1848; margin-bottom: 0.4rem; }
+        .faq-answer { font-size: 0.95rem; }
+        .contact-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
+        .contact-item { margin-bottom: 1rem; }
+        .contact-label { font-size: 0.8rem; text-transform: uppercase; color: #A23B72; }
+        .contact-value { font-size: 1rem; font-weight: 700; color: #6C1848; }
+        .contact-card { background: linear-gradient(135deg, #6C1848 0%, #A23B72 100%); color: white; border-radius: 18px; padding: 1.6rem 1.8rem; }
+        .contact-card-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        footer { padding: 1.5rem 1.25rem; border-top: 1px solid rgba(0,0,0,0.05); font-size: 0.85rem; background: white; }
+        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; color: #777; }
+        @media (max-width: 768px) { .nav-menu { display: none; } .hero-title { font-size: 1.8rem; } .pillars-grid, .services-grid, .audiences-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-left"><div class="nav-logo-text">maipo</div></div>
+            <nav class="nav-menu">
+                <a href="#quienes-somos">Quiénes somos</a>
+                <a href="#ejes">Cómo trabajamos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#situaciones">Situaciones</a>
+                <a href="#publicos">A quiénes</a>
+                <a href="#faq">Preguntas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <a href="#contacto" class="btn btn-outline">Contactar</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="section-inner">
+                <div class="hero-pill">INICIATIVA SOCIAL</div>
+                <h1 class="hero-title">Acompañamos la transformación social desde el cuidado</h1>
+                <p class="hero-text">Fortalecemos el tejido social impulsando la generación de conocimiento entre profesionales de la acción social, desde la supervisión, la formación y la sostenibilidad institucional.</p>
+                <p class="hero-text">Trabajamos con organizaciones, equipos y servicios públicos que actúan como agentes locales de transformación frente a las desigualdades y discriminaciones.</p>
+                <div class="hero-actions">
+                    <a href="#servicios" class="btn btn-primary">Conoce nuestros servicios</a>
+                    <a href="mailto:info@maipo.es?subject=Sesión%20de%20exploración%20con%20Maipo" class="btn btn-outline">Concertar sesión de exploración</a>
+                </div>
+                <div class="hero-contact">📧 <a href="mailto:info@maipo.es">info@maipo.es</a> | ☎️ <a href="tel:+34617920104">+34 617 920 104</a></div>
+            </div>
+        </section>
+        <section class="section" id="quienes-somos">
+            <div class="section-inner">
+                <p class="section-subtitle">QUIÉNES SOMOS</p>
+                <h2 class="section-title">Una iniciativa para fortalecer el tejido social</h2>
+                <p class="section-intro">Acompañamos a profesionales, equipos y organizaciones de acción social para que puedan sostener prácticas cuidadas, reflexivas y con impacto en las vidas de personas, grupos y comunidades.</p>
+                <p class="section-intro">Creamos espacios estructurados donde los equipos pueden detenerse, mirar su práctica y tomar decisiones con más sentido y cuidado. Promovemos una cultura del cuidado que fortalece la capacidad de generar transformación social.</p>
+            </div>
+        </section>
+        <section class="section section-alt" id="ejes">
+            <div class="section-inner">
+                <p class="section-subtitle">NUESTROS EJES</p>
+                <h2 class="section-title">Acompañamos, cultivamos y generamos</h2>
+                <p class="section-intro">Nuestra propuesta se articula en tres ejes de trabajo que se retroalimentan y se adaptan a cada realidad organizativa.</p>
+                <div class="pillars-grid">
+                    <article class="pilar-card">
+                        <div class="pilar-number">01</div>
+                        <div class="pilar-tag">ACOMPAÑAMOS PROCESOS</div>
+                        <h3 class="pilar-title">Espacios seguros y protectores</h3>
+                        <p>Facilitamos espacios donde las y los profesionales pueden reflexionar sobre su práctica, compartir experiencias y sostener el cuidado mutuo. A través de supervisión profesional, acompañamos la gestión emocional, el desarrollo de estrategias de autocuidado y la construcción de equipos más resilientes.</p>
+                    </article>
+                    <article class="pilar-card">
+                        <div class="pilar-number">02</div>
+                        <div class="pilar-tag">CULTIVAMOS SABERES</div>
+                        <h3 class="pilar-title">Aprendizajes colectivos</h3>
+                        <p>Contribuimos a la generación y transferencia de conocimiento a partir de la reflexión teórico-práctica. Creamos espacios de formación y sistematización donde los equipos aprenden desde la experiencia, comparten metodologías y construyen saberes útiles para otros contextos.</p>
+                    </article>
+                    <article class="pilar-card">
+                        <div class="pilar-number">03</div>
+                        <div class="pilar-tag">GENERAMOS PROYECTOS</div>
+                        <h3 class="pilar-title">Iniciativas con sentido</h3>
+                        <p>Colaboramos en la construcción, visibilización y desarrollo de organizaciones e iniciativas sociales que promueven cohesión social, desarrollo comunitario y fortalecimiento institucional. Acompañamos procesos de gestión integral de proyectos y financiación.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="servicios">
+            <div class="section-inner">
+                <p class="section-subtitle">SERVICIOS</p>
+                <h2 class="section-title">Qué ofrecemos</h2>
+                <p class="section-intro">Diseñamos y acompañamos procesos adaptados a cada realidad organizativa, combinando supervisión, formación, sistematización, fortalecimiento institucional y gestión de proyectos y financiación.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3 class="service-title">Supervisión profesional</h3>
+                        <p class="service-text">Espacios grupales o individuales para reflexionar sobre la praxis y el autocuidado, favoreciendo una cultura del cuidado y el bienestar personal y colectivo de los equipos.</p>
+                        <ul>
+                            <li>Sesiones bimensuales o mensuales</li>
+                            <li>Grupos reducidos (4-12 personas)</li>
+                            <li>Facilitación especializada</li>
+                            <li>Enfoque reflexivo y seguro</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Sistematización de prácticas</h3>
+                        <p class="service-text">Procesos para generar conocimiento a partir de la recuperación y reconstrucción de experiencias de intervención social, facilitando aprendizajes útiles y transferibles.</p>
+                        <ul>
+                            <li>Recuperación de experiencias</li>
+                            <li>Análisis colectivo y reflexión teórico-práctica</li>
+                            <li>Documentación metodológica</li>
+                            <li>Socialización de aprendizajes</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Formación de equipos</h3>
+                        <p class="service-text">Diseño y desarrollo de acciones formativas a medida, basadas en necesidades e intereses identificados con los equipos, con metodología vivencial y participativa.</p>
+                        <ul>
+                            <li>Diagnóstico de necesidades</li>
+                            <li>Talleres y cursos personalizados</li>
+                            <li>Metodología vivencial y colaborativa</li>
+                            <li>Evaluación de impacto</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Desarrollo y fortalecimiento institucional</h3>
+                        <p class="service-text">Acompañamiento en procesos internos ligados a propósito, visión y estrategia, liderazgos colaborativos, gobernanza participativa, sostenibilidad y cohesión de equipos.</p>
+                        <ul>
+                            <li>Diagnóstico institucional</li>
+                            <li>Diseño de estrategias</li>
+                            <li>Implementación acompañada</li>
+                            <li>Evaluación y ajustes</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Gestión integral de proyectos y financiación</h3>
+                        <p class="service-text">Acompañamos el ciclo completo de los proyectos sociales: diseño, formulación, planificación operativa, seguimiento, evaluación y búsqueda de financiación pública y privada alineada con vuestro propósito.</p>
+                        <ul>
+                            <li>Diseño y formulación de proyectos</li>
+                            <li>Identificación y búsqueda de financiación</li>
+                            <li>Planificación operativa</li>
+                            <li>Seguimiento y evaluación</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Mentoría para organizaciones y proyectos</h3>
+                        <p class="service-text">Apoyo técnico a entidades y profesionales en el diseño y puesta en marcha de nuevas iniciativas de transformación social, fortaleciendo capacidades y consolidando propuestas.</p>
+                        <ul>
+                            <li>Asesoramiento técnico especializado</li>
+                            <li>Acompañamiento estratégico</li>
+                            <li>Fortalecimiento de capacidades</li>
+                            <li>Consolidación de iniciativas</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Acompañamiento para tejer comunidad</h3>
+                        <p class="service-text">Espacios colaborativos y seguros donde personas, grupos e iniciativas ciudadanas impulsan proyectos comunitarios, fortalecen redes y activan procesos de desarrollo local.</p>
+                        <ul>
+                            <li>Facilitación de procesos comunitarios</li>
+                            <li>Fortalecimiento de redes locales</li>
+                            <li>Activación de recursos territoriales</li>
+                            <li>Desarrollo de capacidades colectivas</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section section-alt" id="situaciones">
+            <div class="section-inner">
+                <p class="section-subtitle">SITUACIONES QUE ACOMPAÑAMOS</p>
+                <h2 class="section-title">Cuándo tiene sentido contar con Maipo</h2>
+                <p class="section-intro">Trabajamos con equipos, organizaciones y servicios públicos que quieren sostener su tarea con más cuidado, reflexión compartida y sentido estratégico.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3 class="service-title">Equipos saturados o en desgaste</h3>
+                        <p class="service-text">Profesionales que afrontan alta carga emocional y necesitan espacios de supervisión, cuidado y reflexión colectiva para sostener su práctica con bienestar.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Organizaciones en cambio</h3>
+                        <p class="service-text">Entidades que quieren revisar su propósito, modos de liderazgo, gobernanza y participación interna para fortalecer su capacidad de transformación social.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Proyectos que quieren sistematizar</h3>
+                        <p class="service-text">Equipos que desean convertir una experiencia de intervención social en conocimiento compartido y transferible a otros contextos y territorios.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-title">Servicios públicos que tejen comunidad</h3>
+                        <p class="service-text">Dispositivos y programas que impulsan procesos comunitarios y necesitan acompañamiento para fortalecer la cohesión, la comunicación y el trabajo en red.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section section-cta">
+            <div class="section-inner">
+                <p class="section-subtitle">¿TE RESUENA?</p>
+                <h2 class="section-title">Exploramos juntas cómo acompañar vuestro proceso</h2>
+                <p class="section-intro">Podemos mantener una conversación inicial para escuchar vuestra realidad, compartir cómo trabajamos y valorar juntas qué tipo de acompañamiento puede tener sentido para vuestro equipo u organización.</p>
+                <a href="mailto:info@maipo.es?subject=Sesión%20de%20exploración%20con%20Maipo" class="btn btn-primary">Concertar una sesión de exploración</a>
+                <p class="cta-note">Sin compromiso, orientada a clarificar necesidades y expectativas.</p>
+            </div>
+        </section>
+        <section class="section" id="publicos">
+            <div class="section-inner">
+                <p class="section-subtitle">A QUIÉN NOS DIRIGIMOS</p>
+                <h2 class="section-title">Trabajamos con agentes de cambio</h2>
+                <p class="section-intro">Colaboramos con quienes están en primera línea de la acción social, acompañando tanto sus procesos internos como la proyección de sus proyectos en el territorio.</p>
+                <div class="audiences-grid">
+                    <article class="audience-card">
+                        <h3 class="audience-title">🏛️ Organizaciones, grupos y colectivos sociales</h3>
+                        <p>Iniciativas sociales, fundaciones, asociaciones y entidades que buscan fortalecer su capacidad institucional, mejorar su impacto y sostener prácticas cuidadas.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3 class="audience-title">👥 Equipos y profesionales de la acción social</h3>
+                        <p>Trabajadores de la acción social, intervención social, mediación y trabajo comunitario que necesitan espacios seguros de reflexión, autocuidado y desarrollo profesional.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3 class="audience-title">🤝 Servicios públicos y otros agentes sociales</h3>
+                        <p>Instituciones públicas, administraciones locales y agentes comunitarios que impulsan transformación social desde el territorio y buscan mejorar la coordinación y el impacto de sus intervenciones.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3 class="audience-title">🌱 Grupos y colectivos ciudadanos</h3>
+                        <p>Proyectos comunitarios, grupos de base y movimientos sociales que buscan tejer comunidad, activar procesos de participación y generar impacto colectivo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section section-alt" id="faq">
+            <div class="section-inner">
+                <p class="section-subtitle">PREGUNTAS FRECUENTES</p>
+                <h2 class="section-title">Antes de iniciar un proceso</h2>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo se inicia un proceso con Maipo?</h3>
+                    <p class="faq-answer">Habitualmente comenzamos con una conversación de exploración donde escuchamos vuestra realidad, identificamos necesidades y valoramos juntas qué tipo de acompañamiento puede tener sentido. A partir de ahí, diseñamos una propuesta adaptada y concretamos objetivos, metodología, temporización e inversión.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Trabajáis presencialmente, online o en formato mixto?</h3>
+                    <p class="faq-answer">Adaptamos el formato a cada situación, combinando sesiones presenciales y online cuando tiene sentido. La supervisión puede ser presencial u online; la formación y el desarrollo institucional suelen funcionar mejor en formato mixto; y la sistematización requiere al menos algunos encuentros presenciales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué duración tienen los procesos?</h3>
+                    <p class="faq-answer">Depende del objetivo y del punto de partida. Podemos acompañar procesos acotados en el tiempo (3-6 meses) o itinerarios más largos (curso escolar, año natural). La supervisión profesional suele plantearse con una periodicidad mensual o bimensual a lo largo del año.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Con qué tipo de organizaciones trabajáis?</h3>
+                    <p class="faq-answer">Colaboramos con entidades sociales, dispositivos y servicios públicos, iniciativas ciudadanas y colectivos que trabajan en acción social, intervención comunitaria, educación social, cooperación o cualquier ámbito orientado a la transformación social.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿En qué territorios trabajáis?</h3>
+                    <p class="faq-answer">Trabajamos principalmente en el contexto estatal, combinando acompañamientos presenciales en territorios cercanos con procesos online que nos permiten llegar a otras geografías. Nuestro foco está en organizaciones de España, aunque también hemos colaborado con entidades latinoamericanas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuál es el rango de inversión?</h3>
+                    <p class="faq-answer">La inversión varía según el tipo de servicio, formato, duración y tamaño del equipo u organización. Trabajamos con presupuestos adaptados a cada realidad. En la sesión de exploración inicial valoramos juntas la viabilidad económica y buscamos fórmulas sostenibles.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo es el primer contacto?</h3>
+                    <p class="faq-answer">Puedes escribirnos a info@maipo.es o llamarnos al 617 92 01 04 contándonos brevemente vuestra situación. Después, concertamos una videollamada o encuentro presencial (sin coste) para conocernos, escuchar vuestras necesidades y explorar juntas si tiene sentido iniciar un proceso.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contacto">
+            <div class="section-inner">
+                <p class="section-subtitle">CONTACTO</p>
+                <h2 class="section-title">Hablemos</h2>
+                <p class="section-intro">Si quieres explorar cómo podemos acompañar a tu equipo u organización, cuéntanos en qué punto estáis y qué os gustaría fortalecer.</p>
+                <div class="contact-layout">
+                    <div>
+                        <div class="contact-item">
+                            <div class="contact-label">CORREO ELECTRÓNICO</div>
+                            <div class="contact-value"><a href="mailto:info@maipo.es">info@maipo.es</a></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">TELÉFONO</div>
+                            <div class="contact-value"><a href="tel:+34617920104">617 92 01 04</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3 class="contact-card-title">Cuéntanos tu contexto</h3>
+                        <p>¿En qué ámbito trabajáis? ¿Qué inquietudes o retos estáis viviendo en el equipo o en la organización? Una breve descripción nos ayuda a preparar mejor el primer encuentro.</p>
+                        <a href="mailto:info@maipo.es?subject=Contacto%20desde%20maipo.es" class="btn btn-accent" style="margin-top: 1rem;">Escribir a Maipo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; <span id="year"></span> Maipo. Todos los derechos reservados.</span>
+            <span>
+                <a href="/aviso-legal.html">Aviso legal</a> &middot;
+                <a href="/politica-privacidad.html">Política de privacidad</a> &middot;
+                <a href="/politica-cookies.html">Política de cookies</a>
+            </span>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
