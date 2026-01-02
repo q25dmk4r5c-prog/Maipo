@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - Maipo</title>
+    <style>
+        :root {
+            --color-primary: #971B5C;
+            --color-primary-light: #B8337A;
+            --color-primary-dark: #6B1441;
+            --color-accent: #E8A537;
+            --color-gray-dark: #2C3E50;
+            --color-gray-medium: #7F8C8D;
+            --color-gray-light: #ECF0F1;
+            --color-bg: #FAFBFC;
+            --color-white: #FFFFFF;
+            --color-text: #34495E;
+            
+            --font-family: 'Mic32', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --radius-md: 8px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background-color: var(--color-white);
+            min-height: calc(100vh - 200px);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+            position: relative;
+            padding-left: var(--spacing-sm);
+        }
+
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: var(--spacing-xl) 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-gray-dark);
+            color: var(--color-white);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            main {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/img/logo.png" alt="Maipo logo" width="10%">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content">
+            <h1>Aviso Legal</h1>
+            <p><strong>Última actualización: 27 de diciembre de 2025</strong></p>
+            
+            <h2>1. Identificación del Responsable</h2>
+            <p>De conformidad con la Ley 34/1988, de 11 de noviembre, sobre publicidad y comunicación comercial (LSSI-CE), se informa que:</p>
+            <ul>
+                <li><strong>Denominación Social:</strong> Maipo - Transformación Social y Acompañamiento Profesional</li>
+                <li><strong>Domicilio:</strong> Gijón, Asturias, España</li>
+                <li><strong>Correo electrónico:</strong> <a href="mailto:info@maipo.es">info@maipo.es</a></li>
+                <li><strong>Teléfono:</strong> +34 617 92 01 04</li>
+            </ul>
+
+            <h2>2. Términos y Condiciones de Uso</h2>
+            <p>El acceso a este sitio web implica la aceptación de los presentes términos y condiciones. El usuario se compromete a:</p>
+            <ul>
+                <li>Utilizar el sitio web de forma lícita y leal, respetando la legalidad vigente</li>
+                <li>No utilizar el sitio web para actividades ilícitas o que infrinjan derechos de terceros</li>
+                <li>No transmitir, distribuir o facilitar acceso a contenido que pudiera resultar ofensivo, ilícito o dañino</li>
+                <li>No intentar acceder a sistemas, redes o información protegida sin autorización</li>
+                <li>No enviar mensajes publicitarios no solicitados (spam)</li>
+            </ul>
+
+            <h2>3. Propiedad Intelectual e Industrial</h2>
+            <p>Todos los contenidos de este sitio web, incluyendo textos, diseños, imágenes, logotipos y cualquier otro material, están protegidos por las leyes de propiedad intelectual. Queda prohibida su reproducción, distribución, transformación o transmisión sin consentimiento previo y escrito de Maipo.</p>
+
+            <h2>4. Limitación de Responsabilidad</h2>
+            <p>Maipo no se responsabiliza por:</p>
+            <ul>
+                <li>Errores u omisiones en el contenido del sitio web</li>
+                <li>Interrupciones o fallos en el funcionamiento del sitio</li>
+                <li>Daños directos, indirectos o consecuentes derivados del acceso o uso del sitio</li>
+                <li>La calidad, exactitud o confiabilidad de la información de terceros accesible a través del sitio</li>
+            </ul>
+
+            <h2>5. Enlaces Externos</h2>
+            <p>Este sitio web puede contener enlaces a sitios web de terceros. Maipo no controla, revisa ni es responsable del contenido, exactitud o prácticas de privacidad de estos sitios externos.</p>
+
+            <h2>6. Modificación del Aviso Legal</h2>
+            <p>Maipo se reserva el derecho de modificar este aviso legal en cualquier momento. Los cambios serán efectivos desde su publicación.</p>
+
+            <div class="back-button">
+                <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <p>&copy; 2025 Maipo. Transformación social y acompañamiento profesional.</p>
+                <div style="margin-top: var(--spacing-md); font-size: 12px;">
+                    <a href="aviso-legal.html" style="margin-right: var(--spacing-lg);">Aviso Legal</a>
+                    <a href="privacidad.html" style="margin-right: var(--spacing-lg);">Política de Privacidad</a>
+                    <a href="cookies.html">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

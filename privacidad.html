@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Maipo</title>
+    <style>
+        :root {
+            --color-primary: #971B5C;
+            --color-primary-light: #B8337A;
+            --color-primary-dark: #6B1441;
+            --color-accent: #E8A537;
+            --color-gray-dark: #2C3E50;
+            --color-gray-medium: #7F8C8D;
+            --color-gray-light: #ECF0F1;
+            --color-bg: #FAFBFC;
+            --color-white: #FFFFFF;
+            --color-text: #34495E;
+            
+            --font-family: 'Mic32', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --radius-md: 8px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background-color: var(--color-white);
+            min-height: calc(100vh - 200px);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+            position: relative;
+            padding-left: var(--spacing-sm);
+        }
+
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: var(--spacing-xl) 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-gray-dark);
+            color: var(--color-white);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            main {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/img/logo.png" alt="Maipo logo" width="10%">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content">
+            <h1>Política de Privacidad</h1>
+            <p><strong>Última actualización: 27 de diciembre de 2025</strong></p>
+            
+            <h2>1. Responsable del Tratamiento</h2>
+            <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa que:</p>
+            <ul>
+                <li><strong>Responsable:</strong> Maipo</li>
+                <li><strong>Correo de contacto:</strong> <a href="mailto:info@maipo.es">info@maipo.es</a></li>
+            </ul>
+
+            <h2>2. Datos Personales Recabados</h2>
+            <p>Recopilamos y tratamos los siguientes datos personales:</p>
+            <ul>
+                <li>Nombre y correo electrónico (a través de formularios de contacto)</li>
+                <li>Teléfono (cuando sea proporcionado voluntariamente)</li>
+                <li>Datos de navegación e información técnica (IP, navegador, dispositivo) mediante cookies analíticas</li>
+            </ul>
+
+            <h2>3. Base Jurídica del Tratamiento</h2>
+            <p>El tratamiento de datos personales se realiza bajo las siguientes bases jurídicas:</p>
+            <ul>
+                <li><strong>Consentimiento:</strong> Para comunicaciones comerciales y marketing</li>
+                <li><strong>Ejecución de contrato:</strong> Para tramitar consultas y servicios solicitados</li>
+                <li><strong>Interés legítimo:</strong> Para mejorar nuestros servicios y experiencia de usuario</li>
+                <li><strong>Obligación legal:</strong> Cuando sea requerido por ley</li>
+            </ul>
+
+            <h2>4. Finalidades del Tratamiento</h2>
+            <p>Los datos personales se utilizan para:</p>
+            <ul>
+                <li>Responder a consultas e informaciones solicitadas</li>
+                <li>Prestar los servicios de asesoramiento y consultoría contratados</li>
+                <li>Enviar información sobre nuestros servicios (con consentimiento previo)</li>
+                <li>Análisis de uso del sitio web para mejorar la experiencia del usuario</li>
+                <li>Cumplimiento de obligaciones legales y contables</li>
+            </ul>
+
+            <h2>5. Destinatarios de los Datos</h2>
+            <p>Los datos personales se compartirán únicamente con:</p>
+            <ul>
+                <li>Prestadores de servicios técnicos (hosting, email marketing) bajo contrato de procesamiento de datos</li>
+                <li>Autoridades públicas cuando sea legalmente requerido</li>
+            </ul>
+
+            <h2>6. Derechos del Interesado</h2>
+            <p>Tiene derecho a:</p>
+            <ul>
+                <li><strong>Acceso:</strong> Obtener confirmación de si sus datos son tratados</li>
+                <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
+                <li><strong>Supresión:</strong> Solicitar la eliminación de sus datos ("derecho al olvido")</li>
+                <li><strong>Limitación:</strong> Restringir el tratamiento de sus datos</li>
+                <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
+                <li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos</li>
+            </ul>
+            <p>Para ejercer estos derechos, contacte a <a href="mailto:info@maipo.es">info@maipo.es</a></p>
+
+            <h2>7. Período de Conservación</h2>
+            <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con la finalidad del tratamiento, y no más allá de lo establecido por la normativa aplicable (generalmente 3-6 años para fines contables).</p>
+
+            <h2>8. Seguridad de los Datos</h2>
+            <p>Implementamos medidas técnicas y organizativas para proteger sus datos contra acceso no autorizado, alteración, pérdida o destrucción.</p>
+
+            <div class="back-button">
+                <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <p>&copy; 2025 Maipo. Transformación social y acompañamiento profesional.</p>
+                <div style="margin-top: var(--spacing-md); font-size: 12px;">
+                    <a href="aviso-legal.html" style="margin-right: var(--spacing-lg);">Aviso Legal</a>
+                    <a href="privacidad.html" style="margin-right: var(--spacing-lg);">Política de Privacidad</a>
+                    <a href="cookies.html">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
