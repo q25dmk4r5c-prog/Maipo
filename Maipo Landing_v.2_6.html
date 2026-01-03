@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maipo - Transformación Social y Acompañamiento Profesional</title>
+    <meta name="description" content="Consultoría especializada en transformación social para ONGs, fundaciones y equipos de acción social. Supervisión profesional, formación y desarrollo institucional en Asturias y España.">
+    
+    <style>
+        :root {
+            --color-primary: #971B5C;
+            --color-primary-light: #B8337A;
+            --color-primary-dark: #6B1441;
+            --color-accent: #E8A537;
+            --color-gray-dark: #2C3E50;
+            --color-gray-medium: #7F8C8D;
+            --color-gray-light: #ECF0F1;
+            --color-bg: #FAFBFC;
+            --color-white: #FFFFFF;
+            --color-text: #34495E;
+            --color-success: #27AE60;
+            
+            --font-family: 'Mic32', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --radius-md: 8px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Navigation Menu */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: var(--radius-md);
+        }
+
+        nav ul li a:hover {
+            color: var(--color-primary);
+            background-color: rgba(151, 27, 92, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .nav-left {
+                gap: var(--spacing-md);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background: linear-gradient(135deg, rgba(151, 27, 92, 0.95) 0%, rgba(107, 20, 65, 0.95) 100%);
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(232, 165, 55, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-gray-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #F5B844;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-contact {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-contact a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            padding: 0;
+        }
+
+        section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .section-light {
+            background-color: var(--color-white);
+        }
+
+        .section-gray {
+            background-color: var(--color-bg);
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-gray-dark);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+        }
+
+        /* Propósito Section */
+        .proposito {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proposito h2 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .proposito p {
+            font-size: 18px;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Pilares Section */
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .pilar {
+            background-color: var(--color-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .pilar:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .pilar-number {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pilar-image-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg);
+        }
+
+        .pilar-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .pilar:hover .pilar-image {
+            transform: scale(1.05);
+        }
+
+        .pilar-content {
+            padding: var(--spacing-lg);
+        }
+
+        /* Servicios Section */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .servicio {
+            background-color: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .servicio:hover {
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--color-accent);
+        }
+
+        .servicio h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .servicio ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .servicio li {
+            padding-left: var(--spacing-lg);
+            position: relative;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-gray-medium);
+        }
+
+        .servicio li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* A Quiénes Section */
+        .destinatarios {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .destinatarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .destinatario {
+            background-color: rgba(151, 27, 92, 0.08);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-primary);
+            transition: all 0.3s;
+        }
+
+        .destinatario:hover {
+            border-left-color: var(--color-accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .destinatario h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .destinatario p {
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(151, 27, 92, 0.95) 0%, rgba(107, 20, 65, 0.95) 100%);
+            color: var(--color-white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(232, 165, 55, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .cta-section h2 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .contact-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .contact-option {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-option:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-option-icon {
+            font-size: 28px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .contact-option a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-intro {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .faq-intro h2 {
+            color: var(--color-primary);
+        }
+
+        .faq-item {
+            background-color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .faq-item.active {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: var(--spacing-lg);
+            background-color: var(--color-white);
+            border-left: 4px solid var(--color-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: var(--color-gray-dark);
+        }
+
+        .faq-question:hover {
+            background-color: var(--color-bg);
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+            color: var(--color-primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: var(--spacing-lg);
+            border-top: 1px solid var(--color-gray-light);
+            color: var(--color-gray-medium);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-gray-dark);
+            color: var(--color-white);
+            padding: var(--spacing-lg) var(--spacing-md);
+            margin-top: var(--spacing-2xl);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+        }
+
+        footer-info {
+            text-align: left;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        footer-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            font-size: 12px;
+        }
+
+        footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .pilares-grid,
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .destinatarios-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer-links {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-left">
+                <a href="#inicio" class="logo">
+                    <img src="img/logo.png" alt="Maipo logo">
+                    Maipo
+                </a>
+            </div>
+            <ul>
+                <li><a href="#pilares">Cómo trabajamos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#contacto" class="btn btn-primary" style="margin: 0; padding: 10px 20px; font-size: 13px;">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Transformación Social desde el Cuidado</h1>
+                    <p>Fortalecemos el tejido social impulsando la generación de conocimiento entre profesionales de la acción social, desde la supervisión, la formación y la sostenibilidad institucional.</p>
+                    
+                    <div class="hero-cta">
+                        <a href="#contacto" class="btn btn-primary">☎️ Solicitar Consulta</a>
+                        <a href="#servicios" class="btn btn-secondary">Saber Más</a>
+                    </div>
+
+                    <div class="hero-contact">
+                        <p>📧 <a href="mailto:info@maipo.es">info@maipo.es</a> | ☎️ <a href="tel:+34617920104">+34 617 920 104</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Propósito Section -->
+        <section class="section-light">
+            <div class="container">
+                <div class="proposito">
+                    <h2>Nuestro Propósito</h2>
+                    <p>Nos comprometemos a garantizar un desarrollo profesional seguro y reflexivo, construyendo espacios donde la acción social se desarrolle desde la certeza, la confianza y el cuidado mutuo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilares Section -->
+        <section class="section-gray" id="pilares">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--color-primary); margin-bottom: var(--spacing-xl);">Cómo Trabajamos</h2>
+                
+                <div class="pilares-grid">
+                    <!-- Pilar 1 -->
+                    <div class="pilar">
+                        <div style="padding: var(--spacing-lg); padding-bottom: var(--spacing-sm);">
+                            <div class="pilar-number">01</div>
+                        </div>
+                        <div class="pilar-image-container">
+                            <img src="img/cultivando-saberes.png" alt="Cultivando saberes" class="pilar-image">
+                        </div>
+                        <div class="pilar-content">
+                            <h3>Cultivando Saberes</h3>
+                            <p>Generamos espacios donde se comparte conocimiento profesional, se reflexiona sobre la praxis y se construye aprendizaje colectivo desde la experiencia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2 -->
+                    <div class="pilar">
+                        <div style="padding: var(--spacing-lg); padding-bottom: var(--spacing-sm);">
+                            <div class="pilar-number">02</div>
+                        </div>
+                        <div class="pilar-image-container">
+                            <img src="img/acompanamos-procesos.png" alt="Acompañamos procesos" class="pilar-image">
+                        </div>
+                        <div class="pilar-content">
+                            <h3>Acompañamos Procesos</h3>
+                            <p>Proporcionamos supervisión profesional continua, reflexión sobre el autocuidado y apoyo para sostenibilidad emocional y institucional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="pilar">
+                        <div style="padding: var(--spacing-lg); padding-bottom: var(--spacing-sm);">
+                            <div class="pilar-number">03</div>
+                        </div>
+                        <div class="pilar-image-container">
+                            <img src="img/generamos-proyectos.png" alt="Generamos proyectos" class="pilar-image">
+                        </div>
+                        <div class="pilar-content">
+                            <h3>Generamos Proyectos</h3>
+                            <p>Diseñamos e implementamos soluciones personalizadas que fortalecen la capacidad institucional y potencian el impacto social.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section class="section-light" id="servicios">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--color-primary); margin-bottom: var(--spacing-xl);">Nuestros Servicios</h2>
+                
+                <div class="servicios-grid">
+                    <!-- Servicio 1 -->
+                    <div class="servicio">
+                        <h3>Supervisión Profesional</h3>
+                        <p>Espacios de reflexión sobre la praxis y autocuidado para profesionales de la acción social.</p>
+                        <ul>
+                            <li>Sesiones bimensuales o mensuales</li>
+                            <li>Grupos reducidos (4-12 personas)</li>
+                            <li>Facilitador especializado</li>
+                            <li>Enfoque reflexivo y seguro</li>
+                        </ul>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="servicio">
+                        <h3>Formación Especializada</h3>
+                        <p>Diseño e implementación de procesos formativos ajustados a necesidades específicas.</p>
+                        <ul>
+                            <li>Diagnóstico de necesidades</li>
+                            <li>Talleres y cursos personalizados</li>
+                            <li>Metodología vivencial</li>
+                            <li>Evaluación de impacto</li>
+                        </ul>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="servicio">
+                        <h3>Desarrollo Institucional</h3>
+                        <p>Acompañamiento en procesos de fortalecimiento organizacional y sostenibilidad.</p>
+                        <ul>
+                            <li>Diagnóstico institucional</li>
+                            <li>Diseño de estrategias</li>
+                            <li>Implementación acompañada</li>
+                            <li>Evaluación y ajustes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A Quiénes Section -->
+        <section class="section-gray">
+            <div class="container">
+                <div class="destinatarios">
+                    <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">A Quiénes Nos Dirigimos</h2>
+                    <p>Trabajamos con organizaciones sociales que buscan potenciar su impacto y cuidar a sus equipos profesionales.</p>
+                    
+                    <div class="destinatarios-grid">
+                        <div class="destinatario">
+                            <h4>🏛️ Organizaciones, Grupos y Colectivos</h4>
+                            <p>Iniciativas sociales, fundaciones, asociaciones y entidades que buscan fortalecer su capacidad institucional, reflexión profesional y sostenibilidad a largo plazo.</p>
+                        </div>
+                        <div class="destinatario">
+                            <h4>👥 Equipos y Profesionales</h4>
+                            <p>De acción social, intervención social, mediación y trabajo comunitario que necesitan espacios seguros de reflexión, supervisión profesional y cuidado emocional.</p>
+                        </div>
+                        <div class="destinatario">
+                            <h4>🤝 Servicios Públicos y Agentes Sociales</h4>
+                            <p>Instituciones públicas, administraciones locales y agentes comunitarios que impulsan transformación social desde la cooperación y el trabajo colaborativo.</p>
+                        </div>
+                        <div class="destinatario">
+                            <h4>🌱 Iniciativas Ciudadanas y Movimientos</h4>
+                            <p>Proyectos comunitarios, grupos de base y movimientos sociales que buscan tejer comunidad, activar procesos colectivos y construir cambio desde la base.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-light" id="faq">
+            <div class="container">
+                <div class="faq-container">
+                    <div class="faq-intro">
+                        <h2>Preguntas Frecuentes</h2>
+                        <p>Resolvemos tus dudas sobre cómo trabajamos y cómo podemos ayudarte.</p>
+                    </div>
+
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cómo es el proceso de supervisión profesional?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>El proceso de supervisión se estructura en sesiones presenciales o remotas (según necesidad) donde facilitamos reflexión sobre la praxis, se abordan desafíos específicos del equipo y se trabaja el autocuidado profesional. Las sesiones duran 90 minutos y se pueden hacer de forma bimensual o mensual según el ritmo del grupo.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuál es el tiempo mínimo de compromiso para un acompañamiento?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Recomendamos un mínimo de 3 a 6 meses de acompañamiento continuo para ver resultados significativos. Sin embargo, podemos adaptar los tiempos según tu situación específica. Los primeros cambios suelen notarse después de 4-6 sesiones.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Pueden trabajar de forma remota?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos tanto modalidad presencial en Gijón como sesiones remotas por videollamada. Muchas organizaciones de España trabajan con nosotros completamente online. Adaptamos el formato según lo que funcione mejor para tu equipo.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cómo medimos el éxito del acompañamiento?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Utilizamos indicadores cualitativos y cuantitativos: mejora en el clima laboral del equipo, reducción de burnout profesional, calidad de las intervenciones, retención de personal, y evaluaciones post-proceso. Realizamos seguimiento continuo y ajustes según los avances.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuál es el rango de inversión?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los costos varían según el tipo de servicio, número de personas y duración del acompañamiento. La supervisión profesional para grupos oscila entre €600-1.200/mes. La formación especializada y desarrollo institucional se presupuesta según el diagnóstico. Podemos ajustar opciones de pago según necesidad.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cómo es el primer contacto?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Lo primero es una conversación inicial sin compromiso (llamada o presencial) donde escuchamos tu situación, desafíos y objetivos. A partir de ahí, diseñamos una propuesta personalizada de acompañamiento. No hay obligación, solo es conocernos.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Qué experiencia tienen? ¿En qué organizaciones han trabajado?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Contamos con más de 6 años de experiencia en consultoría y acompañamiento a organizaciones sociales. Hemos trabajado con fundaciones, asociaciones e instituciones públicas en Asturias, España. Disponemos de referencias y casos de éxito que compartimos bajo confidencialidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final Section -->
+        <section class="cta-section" id="contacto">
+            <div class="container">
+                <h2>Conectemos</h2>
+                <p>Hablemos sobre tu organización y cómo podemos potenciar tu impacto social.</p>
+
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="contact-option-icon">☎️</div>
+                        <p>Llamada directa</p>
+                        <a href="tel:+34617920104">+34 617 920 104</a>
+                    </div>
+                    <div class="contact-option">
+                        <div class="contact-option-icon">📧</div>
+                        <p>Envía un email</p>
+                        <a href="mailto:info@maipo.es">info@maipo.es</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <p><strong>Maipo</strong></p>
+                <p>Transformación social y acompañamiento profesional</p>
+                <p>📍 Gijón, Asturias | 📧 info@maipo.es | ☎️ +34 617 920 104</p>
+            </div>
+            <div style="font-size: 12px;">
+                <a href="aviso-legal.html">Aviso Legal</a> | 
+                <a href="privacidad.html">Privacidad</a> | 
+                <a href="cookies.html">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
