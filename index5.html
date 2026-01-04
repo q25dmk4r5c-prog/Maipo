@@ -339,7 +339,7 @@
         }
 
         .pilar-image {
-            width: 100%;
+            width: 70%;
             height: auto;
             object-fit: cover;
             transition: transform 0.3s ease;
@@ -654,6 +654,42 @@
                 gap: var(--spacing-sm);
             }
         }
+        /* Purpose Section */
+        .purpose {
+            background-color: var(--color-white);
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .purpose-card {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+
+        .purpose-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .purpose-card h3 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            font-size: 18px;
+        }
+
+        .purpose-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -696,15 +732,35 @@
             </div>
         </section>
 
-        <!-- Propósito Section -->
-        <section class="section-light">
-            <div class="container">
-                <div class="proposito">
-                    <h2>Nuestro Propósito</h2>
-                    <p>Nos comprometemos a garantizar un desarrollo profesional seguro y reflexivo, construyendo espacios donde la acción social se desarrolle desde la certeza, la confianza y el cuidado mutuo.</p>
+        <!-- Purpose Section -->
+    <section id="proposito" class="purpose">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-bottom: var(--spacing-xl);">
+                <div>
+                    <h2>Nuestro propósito</h2>
+                    <p>Promover una sociedad más cohesionada, inclusiva y equitativa, reforzando el bienestar de personas, grupos y comunidades a través de profesionales comprometidos con la transformación social.</p>
+                </div>
+                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); height: 300px;">
+                    <img src="/img/equipo.png" alt="Equipo Maipo" width="100%" height="auto" style="object-fit: cover;">
                 </div>
             </div>
-        </section>
+            
+            <div class="purpose-grid">
+                <div class="purpose-card fade-in">
+                    <h3>A quién nos dirigimos</h3>
+                    <p>Organizaciones, grupos y colectivos que trabajan en acción social, y a los equipos y profesionales comprometidos con la transformación.</p>
+                </div>
+                <div class="purpose-card fade-in">
+                    <h3>Nuestra misión</h3>
+                    <p>Fortalecer el tejido social e impulsar la generación de conocimiento entre profesionales de la acción social como agentes locales de transformación.</p>
+                </div>
+                <div class="purpose-card fade-in">
+                    <h3>Nuestro compromiso</h3>
+                    <p>Espacios seguros donde reflexionar, aprender y proponer mejoras, promoviendo una cultura del cuidado en organizaciones y proyectos sociales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <!-- Pilares Section -->
         <section class="section-gray" id="pilares">
